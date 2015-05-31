@@ -14,7 +14,7 @@
   "author": "Jack Callister",
   "license": "ISC",
   "dependencies": {
-    "worsley": "0.0.1-alpha.1",
+    "worsley": "0.0.1-alpha.2",
     "babel": "^5.2.16",
     "ejs": "^2.3.1",
     "express": "^4.12.3",

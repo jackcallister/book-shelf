@@ -9,12 +9,16 @@ class BooksActions extends Actions {
     return book;
   }
 
-  beginLoadingBooks() {
-    BooksWebUtils.fetch({}, this);
+  beginLoadingBooks(query) {
+    BooksWebUtils.fetch(query, this);
   }
 
   successLoadingBooks(books) {
     return books;
+  }
+
+  failureLoadingBooks(error) {
+    return error;
   }
 }
 

@@ -12,20 +12,14 @@ class BooksStore extends Store {
       loading: true
     });
 
-    this.registerActionHandler(
-      BooksActions.constants.addBook,
-      this.addBook
-    );
+    const actions = BooksActions.constants;
 
-    this.registerActionHandler(
-      BooksActions.constants.beginLoadingBooks,
-      this.beginLoadingBooks
-    )
-
-    this.registerActionHandler(
-      BooksActions.constants.successLoadingBooks,
-      this.successLoadingBooks
-    )
+    this.registerActionHandlers({
+      addBook: actions.addBook,
+      beginLoadingBooks: actions.beginLoadingBooks,
+      successLoadingBooks: actions.successLoadingBooks,
+      failureLoadingBooks: actions.failureLoadingBooks
+    });
   }
 
   addBook(book) {
@@ -45,6 +39,10 @@ class BooksStore extends Store {
       books: books,
       loading: false
     });
+  }
+
+  failureLoadingBooks(error) {
+
   }
 }
 
