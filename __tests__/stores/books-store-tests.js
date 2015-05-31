@@ -7,38 +7,38 @@ import assert from 'assert';
 describe('BooksStore', () => {
   const book = { id: 1, title: 'Test Title' };
   const payload = [book];
-  let bookStore;
+  let booksStore;
 
   beforeEach(() => {
-    bookStore = new BooksStore(TestUtils.worsley, TestUtils.actions);
+    booksStore = new BooksStore(TestUtils.worsley, TestUtils.actions);
   });
 
   describe('#addBook', () => {
 
     it('adds a book to the state', () => {
-      bookStore.addBook(book);
-      assert.deepEqual(bookStore.state.books, payload);
+      booksStore.addBook(book);
+      assert.deepEqual(booksStore.state.books, payload);
     });
   });
 
   describe('#beginLoadingBooks', () => {
 
     it('sets loading to true', () => {
-      bookStore.beginLoadingBooks();
-      assert.ok(bookStore.state.loading);
+      booksStore.beginLoadingBooks();
+      assert.ok(booksStore.state.loading);
     });
   });
 
   describe('#successLoadingBooks', () => {
 
     it('sets loading to false', () => {
-      bookStore.successLoadingBooks(payload);
-      assert.equal(bookStore.state.loading, false);
+      booksStore.successLoadingBooks(payload);
+      assert.equal(booksStore.state.loading, false);
     });
 
     it('sets books to the payload', () => {
-      bookStore.successLoadingBooks(payload);
-      assert.deepEqual(bookStore.state.books, payload);
+      booksStore.successLoadingBooks(payload);
+      assert.deepEqual(booksStore.state.books, payload);
     });
   });
 });
