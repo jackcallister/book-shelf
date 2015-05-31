@@ -48143,9 +48143,7 @@
 	var BooksWebUtils = {
 
 	  fetch: function fetch(query, actions) {
-	    setTimeout(function () {
-	      actions.successLoadingBooks(data);
-	    }, 5000);
+	    actions.successLoadingBooks(data);
 	  }
 	};
 

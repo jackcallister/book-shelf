@@ -6,9 +6,7 @@ const data = [
 const BooksWebUtils = {
 
   fetch(query, actions) {
-    setTimeout(() => {
-      actions.successLoadingBooks(data);
-    }, 5000);
+    actions.successLoadingBooks(data);
   }
 };
 
