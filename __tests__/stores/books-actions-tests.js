@@ -24,21 +24,4 @@ describe('BooksActions', () => {
       assert.deepEqual(booksStore.state.books, [book]);
     });
   });
-
-  describe('#beginLoadingBooks', () => {
-    let stub;
-
-    beforeEach(() => {
-      stub = sinon.stub(BooksWebUtils, 'fetch');
-    });
-
-    it('calls webutils', () => {
-      booksActions.beginLoadingBooks();
-      sinon.assert.calledOnce(stub);
-    });
-
-    afterEach(() => {
-      BooksWebUtils.fetch.restore();
-    });
-  });
 });

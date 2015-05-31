@@ -66,7 +66,7 @@
 
 	var flux = new _flux2['default']();
 
-	flux.actions.BooksActions.beginLoadingBooks({});
+	flux.load(window.Payload);
 
 	document.addEventListener('DOMContentLoaded', function () {
 	  return _reactRouter2['default'].run(_routes2['default'], _reactRouter2['default'].HistoryLocation, function (Handler) {
@@ -48130,25 +48130,21 @@
 /* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
-	var _Object$defineProperty = __webpack_require__(198)['default'];
+	var _Object$defineProperty = __webpack_require__(198)["default"];
 
-	_Object$defineProperty(exports, '__esModule', {
+	_Object$defineProperty(exports, "__esModule", {
 	  value: true
 	});
 
-	var data = [{ id: 1, title: 'Game of Thrones' }, { id: 2, title: 'Born to Run' }];
-
 	var BooksWebUtils = {
 
-	  fetch: function fetch(query, actions) {
-	    actions.successLoadingBooks(data);
-	  }
+	  fetch: function fetch(query, actions) {}
 	};
 
-	exports['default'] = BooksWebUtils;
-	module.exports = exports['default'];
+	exports["default"] = BooksWebUtils;
+	module.exports = exports["default"];
 
 /***/ },
 /* 224 */

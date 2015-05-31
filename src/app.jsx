@@ -7,7 +7,7 @@ import Flux from './flux';
 
 const flux = new Flux();
 
-flux.actions.BooksActions.beginLoadingBooks({});
+flux.load(window.Payload);
 
 document.addEventListener('DOMContentLoaded', () =>
   Router.run(routes, Router.HistoryLocation, (Handler) =>
