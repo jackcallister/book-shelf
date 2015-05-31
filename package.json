@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack -w & npm run serve",
     "serve": "cd dist && python -m SimpleHTTPServer",
-    "test": "node_modules/.bin/mocha --compilers js:babel/register tests",
+    "test": "node_modules/.bin/mocha __tests__/ --recursive --compilers js:babel/register",
     "lint": "npm run lint-src && npm run lint-tests",
     "lint-src": "node_modules/.bin/eslint --ext .js --ext .jsx src",
     "lint-tests": "node_modules/.bin/eslint --ext .js --ext .jsx tests"
@@ -14,7 +14,7 @@
   "author": "Jack Callister",
   "license": "ISC",
   "dependencies": {
-    "worsley": "0.0.1-alpha.2",
+    "worsley": "0.0.1-alpha.3",
     "babel": "^5.2.16",
     "ejs": "^2.3.1",
     "express": "^4.12.3",
