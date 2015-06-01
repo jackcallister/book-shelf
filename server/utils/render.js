@@ -8,15 +8,15 @@ function render(res, data, path) {
 
   flux.load(data);
 
-  const payload = JSON.stringify(flux.backup());
+  const payload = flux.backup();
 
   Router.run(routes, path, (Handler) => {
     const handlerFactory = React.createFactory(Handler);
     const html = React.renderToString(handlerFactory({flux: flux}));
     const payload = flux.backup();
 
-    res.render('index', { html: html, payload: payload });
+    res.render('index', { html: html, payload: JSON.stringify(payload) });
   });
 }
 
-module.exports = render;
+export default render;

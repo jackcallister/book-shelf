@@ -5,19 +5,15 @@ import BooksWebUtils from '../web-utils/books-web-utils';
 
 class BooksActions extends Actions {
 
-  addBook(book) {
+  create(book) {
+    BooksWebUtils.create(book, this);
+  }
+
+  successCreatingBook(book) {
     return book;
   }
 
-  beginLoadingBooks(query) {
-    BooksWebUtils.fetch(query, this);
-  }
-
-  successLoadingBooks(books) {
-    return books;
-  }
-
-  failureLoadingBooks(error) {
+  failureCreatingBook(error) {
     return error;
   }
 }

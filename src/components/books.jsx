@@ -6,7 +6,7 @@ import Book from './book';
 class Books extends React.Component {
 
   _addBook() {
-    this.props.BooksActions.addBook({ id: 3, title: 'Sapiens' });
+    this.props.BooksActions.create({ id: 3, title: 'Sapiens' });
   }
 
   renderBooks() {

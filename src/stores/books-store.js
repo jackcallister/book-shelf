@@ -9,40 +9,37 @@ class BooksStore extends Store {
 
     this.setInitialState({
       books: [],
-      loading: true
+      loading: true,
+      error: null
     });
 
     const actions = BooksActions.constants;
 
     this.registerActionHandlers({
-      addBook: actions.addBook,
-      beginLoadingBooks: actions.beginLoadingBooks,
-      successLoadingBooks: actions.successLoadingBooks,
-      failureLoadingBooks: actions.failureLoadingBooks
+      beginCreatingBook: actions.create,
+      successCreatingBook: actions.successCreatingBook,
+      failureCreatingBook: actions.failureCreatingBook
     });
   }
 
-  addBook(book) {
-    this.setState({
-      books: this.state.books.concat(book)
-    });
-  }
-
-  beginLoadingBooks(books) {
+  beginCreatingBook() {
     this.setState({
       loading: true
+    });
+  }
+
+  successCreatingBook(books) {
+    this.setState({
+      loading: false,
+      books: this.state.books.concat(books)
     })
   }
 
-  successLoadingBooks(books) {
+  failureCreatingBook(error) {
     this.setState({
-      books: books,
-      loading: false
+      loading: false,
+      error: error
     });
-  }
-
-  failureLoadingBooks(error) {
-
   }
 }
 
