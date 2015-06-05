@@ -4,8 +4,7 @@ import render from '../utils/render';
 const router = express.Router();
 
 const data = [
-  { id: 1, title: 'Game of Thrones' },
-  { id: 2, title: 'Born to Run' },
+  { id: 1, title: 'Game of Thrones', isbn: 9780553386790 }
 ];
 
 const payload = {

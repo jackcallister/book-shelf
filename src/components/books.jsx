@@ -5,13 +5,17 @@ import Book from './book';
 
 class Books extends React.Component {
 
-  _addBook() {
+  addBook() {
     this.props.BooksActions.create({ id: 3, title: 'Sapiens' });
   }
 
   renderBooks() {
     return this.props.books.map((book) => {
-      return <Book key={book.id} title={book.title} />;
+      return (
+        <Book key={book.id}
+              title={book.title}
+              isbn={book.isbn} />
+      )
     });
   }
 
@@ -23,7 +27,7 @@ class Books extends React.Component {
         <ul>
           {books}
         </ul>
-        <span onClick={e => this._addBook(e)}>Add a book</span>
+        <span onClick={e => this.addBook(e)}>Add a book</span>
       </div>
     );
   }

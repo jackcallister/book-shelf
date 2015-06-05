@@ -2,13 +2,13 @@
 
 import React from 'react';
 import { Route, DefaultRoute } from 'react-router';
-import App from './components/app';
-import Books from './containers/books-container';
+import AppHandler from './components/handlers/app-handler';
+import BooksHandler from './components/handlers/books-handler';
 
 const Routes = (
-  <Route name="root" path="/" handler={App}>
-    <Route name="books" path="books" handler={Books} />
-    <DefaultRoute handler={Books} />
+  <Route name="root" path="/" handler={AppHandler}>
+    <Route name="books" path="books" handler={BooksHandler} />
+    <DefaultRoute handler={BooksHandler} />
   </Route>
 );
 

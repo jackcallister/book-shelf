@@ -2,9 +2,9 @@
 
 import React from 'react';
 import Container from 'worsley/container';
-import Books from '../components/books';
+import Books from '../books';
 
-class BooksContainer extends React.Component {
+class BooksHandler extends React.Component {
 
   render() {
     return (
@@ -17,4 +17,4 @@ class BooksContainer extends React.Component {
   }
 }
 
-export default BooksContainer;
+export default BooksHandler;
