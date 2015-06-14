@@ -9,10 +9,6 @@ import bodyParser from 'body-parser';
 const app = express();
 const port = process.env.PORT || 1912;
 
-jsx.install({
-  extension: '.jsx'
-});
-
 app.set('views', 'server/views/');
 app.set('view engine', 'ejs');
 

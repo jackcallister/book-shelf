@@ -1,6 +1,5 @@
 'use strict';
 
-import normalize from 'normalize.css';
 import globals from '../../styles/globals.css';
 
 import React from 'react';

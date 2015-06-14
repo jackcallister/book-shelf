@@ -7,14 +7,14 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx', '.css', '.less']
+    extensions: ['', '.js', '.jsx', '.css', '.local']
   },
 
   module: {
     loaders: [
       { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader?stage=1&optional=runtime' },
-      { test: /\.css$/, loader: 'style-loader!css-loader?module&importLoaders=1' },
-      { test: /\.less$/, loader: 'style-loader!css-loader?module&importLoaders=1!less-loader' }
+      { test: /\.local$/, loader: 'style-loader!css-loader?module!less-loader' },
+      { test: /\.css$/, loader: 'style-loader!css-loader' }
     ]
   }
 };
