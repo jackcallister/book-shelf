@@ -1,15 +1,8 @@
 var webpack = require('webpack'),
-    path = require('path'),
-    fs = require('fs');
+    fs = require('fs'),
+    path = require('path');
 
-var nodeModules = {};
-fs.readdirSync('node_modules')
-.filter(function(x) {
-  return ['.bin'].indexOf(x) === -1;
-})
-.forEach(function(mod) {
-  nodeModules[mod] = 'commonjs ' + mod;
-});
+var node_modules = fs.readdirSync('node_modules').filter(function(x) { return x !== '.bin' });
 
 module.exports = {
   entry: './server/app.js',
@@ -22,7 +15,8 @@ module.exports = {
 
   output: {
     path: './dist/scripts',
-    filename: 'server.js'
+    filename: 'server.js',
+    libraryTarget: 'commonjs2'
   },
 
   node: {
@@ -31,7 +25,7 @@ module.exports = {
     console: true
   },
 
-  externals: nodeModules,
+  externals: node_modules,
 
   module: {
     loaders: [

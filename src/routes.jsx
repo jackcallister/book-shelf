@@ -1,6 +1,6 @@
 'use strict';
 
-import React from 'react';
+import React from '../node_modules/react/react.js';
 import { Route, DefaultRoute } from 'react-router';
 import AppHandler from './components/handlers/app-handler';
 import BooksHandler from './components/handlers/books-handler';
