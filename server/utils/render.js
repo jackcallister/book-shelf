@@ -1,7 +1,7 @@
 import React from 'react';
 import Router from 'react-router';
 import Flux from '../../src/flux';
-import routes from '../../src/routes.jsx';
+import routes from '../../dist/scripts/server.js';
 
 function render(res, data, path) {
   const flux = new Flux();
