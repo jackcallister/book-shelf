@@ -3,7 +3,7 @@
 import globals from '../../styles/globals.css';
 
 import React from 'react';
-import { RouteHandler } from 'react-router';
+import { RouteHandler, Link } from 'react-router';
 import Header from '../header';
 
 class App extends React.Component {
@@ -12,8 +12,8 @@ class App extends React.Component {
     return (
       <main>
         <Header />
-
-        <RouteHandler {...this.props}/>
+        <Link to='books'>Book path</Link>
+        <RouteHandler {...this.props} />
       </main>
     );
   }

@@ -2,12 +2,12 @@ var webpack = require('webpack'),
     fs = require('fs'),
     path = require('path');
 
-var node_modules = fs.readdirSync('node_modules').filter(function(x) { return x !== '.bin' });
-
 module.exports = {
-  entry: './server/app.js',
+  entry: './src/routes.jsx',
 
   target: 'node',
+
+  externals: /^[a-z][a-z\.\-0-9]*$/,
 
   resolve: {
     extensions: ['', '.js', '.jsx', '.css', '.local']
@@ -25,13 +25,11 @@ module.exports = {
     console: true
   },
 
-  externals: node_modules,
-
   module: {
     loaders: [
       { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader?stage=1&optional=runtime' },
-      { test: /\.local$/, loader: 'css-loader/locals?module!less-loader' },
-      { test: /\.css$/, loader: 'null-loader' }
+      { test: /\.local$/, exclude: /node_modules/, loader: 'css-loader/locals?module!less-loader' },
+      { test: /\.css$/, exclude: /node_modules/, loader: 'null-loader' }
     ]
   }
 }
